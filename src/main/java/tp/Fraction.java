@@ -74,7 +74,36 @@ public class Fraction {
 	 * the numerator must be positive and the denominator must be negative. 
 	 */
 	private void reduce() {
-		
+		private void reduce() {
+		int n = numerator;
+		int d = denominator;
+		int lePlusGrand;
+        	int diviseur = 0;
+        
+        	if (numerator < 0) {
+            		n = -numerator;
+            		numerator = -numerator;
+            		denominator = -denominator;
+        	}
+        
+        	if (n > d) {
+            		lePlusGrand = n;
+        	}        
+        	else {
+            		lePlusGrand = d;
+        	}
+
+        	for (int i = 1; i <= lePlusGrand; i++) {
+            		if (numerator % i == 0 && denominator % i == 0) {
+                		diviseur = i;
+            		}
+        	}
+
+       		if (diviseur != 0) {
+            		numerator /= diviseur;
+            		denominator /= diviseur;
+        	}
+		}
 	}  
 	/** 	MICHOTTE Martin
 	 * Get a textual representation of the fraction
